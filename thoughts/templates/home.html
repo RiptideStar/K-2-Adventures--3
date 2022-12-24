@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  </head>
+<body>
+
+  <style>
+    .output {
+    text-align: center;
+    font-family: 'Changa One', sans-serif;
+    font-size: 64px;
+    font-weight: bold;
+    color: #263726;
+    text-shadow: 4px 4px 4px {{ col }};
+    animation: pulse 1s infinite;
+  }
+
+  .button-kyle {
+    text-align: center;
+    margin: auto;
+    display: block;
+    background-color: #89caff; /* pale pink color */
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 16px;
+    padding: 8px 16px;
+  }
+
+  .button-kyle:hover {
+    background-color: #2190ec;
+  }
+
+  .button-kimberly {
+    text-align: center;
+    margin: auto;
+    display: block;
+    background-color: #94ff8a;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 16px;
+    padding: 8px 16px;
+  }
+  
+  .button-kimberly:hover {
+    background-color: #39ff32; /* deep pink color */
+  }
+
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  .label {
+    text-align: center;
+    margin: auto;
+    display: block;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    font-size: 32px;
+    color: #FF00FF;
+    text-shadow: 2px 2px 4px #FF69B4; 
+  } 
+    
+
+  </style>
+
+<p class="label"> <3 </p>
+<br>
+<button id="increment-button-kimberly" class="button-kimberly">Kimberly eee</button>
+<button id="increment-button-kyle" class="button-kyle">Kyle aaa</button>
+<p id="output-k" class="output">{{num}}</p>
+
+<script>
+const button_kim = document.getElementById('increment-button-kimberly');
+const output = document.getElementById("output-k");
+
+button_kim.addEventListener("click", () => {
+  fetch("http://127.0.0.1:5002/increment-kimberly", { method: "POST"})
+    .then(response => response.json())
+    .then(data => {
+      output.innerHTML = data.number;
+      output.style.textShadow = "4px 4px 4px #56ff50";
+    })
+});
+
+const button_kyle = document.getElementById('increment-button-kyle');
+button_kyle.addEventListener("click", () => {
+  fetch("http://127.0.0.1:5002/increment-kyle", { method: "POST"})
+    .then(response => response.json())
+    .then(data => {
+      output.innerHTML = data.number;
+      output.style.textShadow = "4px 4px 4px #2190ec";
+    })
+});
+
+
+</script>
+
+</body>
+</html>
