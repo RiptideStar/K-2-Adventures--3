@@ -1,0 +1,93 @@
+<html>
+  <head>
+  </head>
+  <body>
+    <p>So it has been:</p> <p id="elapsed-time"></p>
+    <p>since we started dating</p>
+
+    <style>
+        .hidden {
+          display: none;
+        }
+        .progress-bar {
+          width: 0;
+          height: 5px;
+          background-color: #333;
+        }
+      </style>
+      
+      <article>
+        <p>
+            Hi Kim! Feel free to keep clicking/tapping your screen for the rest of this.
+        </p>
+        <p class="hidden">
+            You know, I can't ever explain why I like you. I just know I do. There is something deep
+            about it that even I can't bring to my conciousness.
+        </p>
+        <p class="hidden">
+            But I can always try :)
+        <p class="hidden">
+            So here is your reminder of some reasons why I really like you:
+        </p>
+        <p class="hidden">
+            You are...
+        </p>
+        <p class="hidden">
+            Funny: You can be cute funny, dark funny, or just comedic. Always got a great sense of humor
+            and I just always feel like I want to smile around you.
+        </p>
+        <p class="hidden">
+            Understanding: You are very considerate, not wanting to cross my boundaries and can see things from my perspective.
+        </p>
+        <p class="hidden">
+            Kind: You are kind and compassionate, always looking out for others :)
+        </p>
+        <p class="hidden">
+            Beautiful: Both inside and out, just everything
+        </p>
+        <p class="hidden">
+            Passionate: You have interests and dreams with determination. I am here to not only picture where you will be 
+            in a few years, but also here to watch every moment along the journey.
+        </p>
+        <p class="hidden">
+            Supportive: Dark days will come, and you have been very understanding and encouraging :)
+        </p>
+        <p class="hidden">
+            Intelligent: Always eager to learn and grow, especially video games :))
+        </p>
+        <p class="hidden">
+            Simply Amazing: Those are reasons why I absolutely like you, but there are no words to 
+            describe how much I love you, and there probably won't ever be.
+        </p>
+      
+      <script>
+        
+        document.addEventListener('click', function() {
+            var hiddenText = document.querySelector('.hidden');
+            hiddenText.classList.remove('hidden');
+        });
+
+    function updateTimer() {
+        // Calculate the elapsed time
+        var start = new Date("{{ start_date }}");
+        var now = new Date();
+        var elapsedTime = now - start;
+
+        // Convert the elapsed time to days, hours, minutes, and seconds
+        var days = Math.floor(elapsedTime / (1000 * 60 * 60 * 24));
+        elapsedTime %= (1000 * 60 * 60 * 24);
+        var hours = Math.floor(elapsedTime / (1000 * 60 * 60));
+        elapsedTime %= (1000 * 60 * 60);
+        var minutes = Math.floor(elapsedTime / (1000 * 60));
+        elapsedTime %= (1000 * 60);
+        var seconds = Math.floor(elapsedTime / 1000);
+
+        // Update the page with the elapsed time in the desired format
+        document.getElementById("elapsed-time").innerHTML = days + " days, " + hours + " hours, " + minutes + " minutes, " + seconds + " seconds";
+    }
+
+    setInterval(updateTimer, 1000);
+
+    </script>
+  </body>
+</html>
