@@ -1,15 +1,8 @@
 from flask import Flask, render_template, flash, request, redirect,make_response
-from flask_sqlalchemy import SQLAlchemy
 import app_query
 import json
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///number.db'
-db = SQLAlchemy(app)
-
-class Number(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    value = db.Column(db.Integer)
 
 @app.route('/increment-kimberly', methods=['POST'])
 def increment_kim():
