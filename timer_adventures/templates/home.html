@@ -2,9 +2,6 @@
   <head>
   </head>
   <body>
-    <p>So it has been:</p> <p id="elapsed-time"></p>
-    <p>since we started dating</p>
-
     <style>
         .hidden {
           display: none;
@@ -16,47 +13,82 @@
         }
         .reveal-text {
             display: inline-block;
+            font-size: 15px;
+            font-family: "Verdana", sans-serif;
+            text-decoration: wavy;
+            font-weight: italic;
+        }
+        .intro {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            font-family: "Georgia", serif;
+            color: #c81919;
+            
+        }
+        .timer {
+            font-size: 42px;
+            font-family: "Arial", sans-serif;
+            color: rgb(7, 14, 42);
+            text-shadow: 1px 1px 2px #1c7979;
+        }
+
+        .article-text {
+            background: linear-gradient(to right, #ff0000, #00ff08);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .reasons {
+            background: linear-gradient(to right, #0015ff, #00ff55);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
       </style>
-      
+
+    <p class="intro">So it has been:</p> <p class="timer intro" id="elapsed-time"></p>
+    <p class="intro">since we started dating</p>
+
+    <br>
     <article>
-    <p>
+    <p class="article-text reveal-text">
         Hi Kim! Feel free to keep clicking/tapping your screen for the rest of this.
     </p>
-    <p id="reveal-text-1" class="hidden reveal-text">
+    <br>
+    <p id="reveal-text-1" class="article-text hidden reveal-text">
     </p>
     <br>
-    <p id="reveal-text-2" class="hidden reveal-text">
+    <p id="reveal-text-2" class="article-text hidden reveal-text">
     </p>
     <br>
-    <p id="reveal-text-3" class="hidden reveal-text">
+    <p id="reveal-text-3" class="article-text hidden reveal-text">
     </p>
     <br>
-    <p id="reveal-text-4" class="hidden reveal-text">
+    <p id="reveal-text-4" class="article-text hidden reveal-text">
     </p>
     <br>
-    <p id="reveal-text-5" class="hidden reveal-text">
+    <p id="reveal-text-5" class="reasons hidden reveal-text">
     </p>
     <br>
-    <p id="reveal-text-6" class="hidden reveal-text">
+    <p id="reveal-text-6" class="reasons hidden reveal-text">
     </p>
     <br>
-    <p id="reveal-text-7" class="hidden reveal-text">
+    <p id="reveal-text-7" class="reasons hidden reveal-text">
     </p>
     <br>
-    <p id="reveal-text-8" class="hidden reveal-text">
+    <p id="reveal-text-8" class="reasons hidden reveal-text">
     </p>
     <br>
-    <p id="reveal-text-9" class="hidden reveal-text">
+    <p id="reveal-text-9" class="reasons hidden reveal-text">
     </p>
     <br>
-    <p id="reveal-text-10" class="hidden reveal-text">
+    <p id="reveal-text-10" class="reasons hidden reveal-text">
     </p>
     <br>
-    <p id="reveal-text-11" class="hidden reveal-text">
+    <p id="reveal-text-11" class="reasons hidden reveal-text">
     </p>
     <br>
-    <p id="reveal-text-12" class="hidden reveal-text">
+    <p id="reveal-text-12" class="reasons hidden reveal-text">
     </p>
       
     <script>
@@ -66,7 +98,7 @@
     //     hiddenText.classList.remove('hidden');
     // });
 
-    const revealText_arr = ["You know that I can't ever explain why I chose you. I just felt it. \
+    const revealText_arr = ["You know that I can't ever explain in words why I chose you. \
 There is something deep about it that even I can't bring to my conciousness.", 
 "But I can always try :)",
 "So here is your reminder of some reasons why I really like you:",
