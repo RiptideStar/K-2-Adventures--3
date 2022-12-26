@@ -6,11 +6,15 @@ def update_thoughts(k_name):
 
     sql = f'''
     UPDATE Numbers
-    SET thoughts=thoughts+1
-    RETURNING thoughts;
+    SET thoughts=thoughts+1 
     '''
 
     cur.execute(sql)
+
+    sql_get = f'''
+    select thoughts from Numbers
+    '''
+    cur.execute(sql_get)
     res = cur.fetchone()
 
     if k_name == "kimberly":
