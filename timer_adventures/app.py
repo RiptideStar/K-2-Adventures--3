@@ -1,5 +1,4 @@
 from flask import Flask, render_template, flash, request, redirect,make_response
-from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
 import json
 
