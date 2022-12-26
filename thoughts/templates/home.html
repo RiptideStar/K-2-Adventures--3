@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+
 <html>
   <head>
   </head>
@@ -83,7 +83,7 @@ const button_kim = document.getElementById('increment-button-kimberly');
 const output = document.getElementById("output-k");
 
 button_kim.addEventListener("click", () => {
-  fetch("http://47.88.59.62:5001/increment-kimberly", { method: "POST"})
+  fetch(":/increment-kimberly", { method: "POST"})
     .then(response => response.json())
     .then(data => {
       output.innerHTML = data.number;
@@ -93,7 +93,7 @@ button_kim.addEventListener("click", () => {
 
 const button_kyle = document.getElementById('increment-button-kyle');
 button_kyle.addEventListener("click", () => {
-  fetch("http://47.88.59.62:5001/increment-kyle", { method: "POST"})
+  fetch("/increment-kyle", { method: "POST"})
     .then(response => response.json())
     .then(data => {
       output.innerHTML = data.number;

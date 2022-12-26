@@ -14,7 +14,6 @@ def increment_kyle():
     number = app_query.update_thoughts("kyle")
     return json.dumps({"number": number[0]})
 
-
 @app.route('/')
 def home():
     (_, number, kim_thought_last) = app_query.get_last_thought()
