@@ -49,6 +49,4 @@ def get_last_thought():
     cur.close
     conn.close()
 
-    print(res)
-
     return res
