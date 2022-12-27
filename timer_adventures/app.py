@@ -3,7 +3,7 @@ from datetime import datetime
 import json
 
 app = Flask(__name__)
-start_date = datetime(2022, 11, 25, 17, 35)
+start_date = datetime(2022, 11, 25, 17, 35) #western time
 
 @app.route('/')
 def home():
